@@ -1,0 +1,14 @@
+{
+  "name": "simulators",
+  "version": "1.0.0",
+  "description": "kubo simulators",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "loan": "node --es-module-specifier-resolution=node src/loan-simulator.js",
+    "investment": "node --es-module-specifier-resolution=node src/investment-simulator.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
