@@ -18,7 +18,12 @@ const simulate = (amount, days) => {
 };
 
 const amount = 20000;
+
+// SIMULACION A 90 DIAS
 console.log(simulate(amount, 90));
+// SIMULACION A 180 DIAS
 console.log(simulate(amount, 180));
+// SIMULACION A 365 DIAS
 console.log(simulate(amount, 365));
+// SIMULACION A 541 DIAS
 console.log(simulate(amount, 541));

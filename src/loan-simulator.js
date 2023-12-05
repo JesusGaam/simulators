@@ -1,15 +1,20 @@
 import { TU_META_KUBO_DATA } from "./constants/loan.js";
 import * as loan from "./utilities/loan-utilities.js";
 
-/* LOAN INPUTS */
+/**
+ * LOAN INPUTS 
+ * */
 const rate = TU_META_KUBO_DATA.avgRate;
 const amount = 10000;
 const suggestedPayment = 1500;
 const frequency = "M"; // M=mensual S=quincenal K=catorcenal W=semanal
 const comissionRate = 5.0;
 const includeIVA = true;
-/* END LOAN INPUTS */
 
+
+/**
+ * CALCULOS DE PLAZO, CUOTA y TABLA DE AMORTIZACION
+ * */
 const frequentizedRate = loan.rateFrequency(rate / 100, frequency, includeIVA);
 const totalPayments = loan.totalPayments(
   amount,
@@ -25,6 +30,9 @@ const amortizationTable = loan.amortizationTable(
   frequency
 );
 
+/**
+ * CALCULOS PARA CAT (ESTOS NO INCLUYEN IVA)
+ * */
 const catComission = loan.cashCommission(amount, comissionRate / 100, false);
 const catRate = loan.rateFrequency(rate / 100, frequency, false);
 const catPayment = loan.payment(amount, totalPayments, catRate);
